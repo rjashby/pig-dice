@@ -10,7 +10,9 @@ Dice.prototype.diceRoll = function() {
 let newDice = new Dice
 
 Dice.prototype.diceCount = function() {
-  this.scoreCount +=1;
+  this.diceRoll();
+  console.log(this.diceRoll());
+  this.scoreCount += this.diceRoll();
 }
 
 
