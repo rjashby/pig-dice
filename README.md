@@ -31,10 +31,20 @@ Expected Output: Dice.diceCount();
 
 describe Dice.prototype.turnEnd();
 
-Test: Method end the counter and turn off player turn boolean when a 1 is rolled.
+Test: Method should end the counter and turn off player turn boolean when a 1 is rolled.
 Code: Dice.prototype.turnEnd = function();
 this.scoreCount = 0;
 Expected Output: Dice {scoreCount: 0}
 scoreCount: 0
+turn = false
+[[Prototype]]: Object
+
+describe Dice.prototype.hold();
+
+Test: Method should keep the current score unchanged and turns player turn to false.
+Code: Dice.prototype.hold = function();
+this.turn = false;
+Expected Output: Dice {scoreCount: X}
+scoreCount: X
 turn = false
 [[Prototype]]: Object
