@@ -23,19 +23,37 @@ Dice.prototype.diceCount = function() {
     this.p1Turn = !this.p1Turn;
     this.p2Turn = !this.p2Turn;
   } else if (myRoll !== 1) {
-    this.scoreCount += myRoll;
-    this.rolls.push(myRoll);
-    console.log(this.rolls);
-    console.log(this.scoreCount);
+    if (this.p1Turn === true) {
+      this.scoreCount += myRoll;
+      this.rolls.push(myRoll);
+    } else {
+      this.scoreCount += myRoll;
+    }
+  console.log(this.rolls);
+  console.log(this.scoreCount);
+  console.log(this);
+  this.winCondition();
   }
 }
 
+// this.scoreCount += myRoll;
+//   this.rolls.push(myRoll);
+//   console.log(this.rolls);
+//   console.log(this.scoreCount);
+//   console.log(this);
+//   this.winCondition();
+
+
 Dice.prototype.winCondition = function () {
-  const reducer = (previousValue, currentValue) => previousValue + currentValue;
-  if (this.rolls.reduce(reducer) >= 100) {
-    return "You Win!";
+  if (this.p1Total + this.scoreCount >= 15) {
+    this.p1Total += this.scoreCount;
+    console.log("Player 1 Wins!");
+  } else if (this.p2Total + this.scoreCount >= 15) {
+    this.p2Total += this.scoreCount;
+    console.log("Player 2 Wins!");
+  } else {
+    console.log("Keep playing!");
   }
-  return "Keep Going My Dude!";
 }
 
 Dice.prototype.hold = function() {
