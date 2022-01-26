@@ -10,10 +10,6 @@ Dice.prototype.diceRoll = function() {
 
 let newDice = new Dice
 
-// Dice.prototype.diceCount = function() {
-//   this.scoreCount += this.diceRoll();
-// }
-
 Dice.prototype.diceCount = function() {
   let myRoll = this.diceRoll();
   console.log(myRoll);
@@ -26,14 +22,10 @@ Dice.prototype.diceCount = function() {
   }
 }
 
-Dice.prototype.turnEnd = function(diceRoll) {
-  if (this.diceRoll === 1) {
-    this.scoreCount === 0;
-    this.turn = false;
-    alert('turn over');
-  }
-  this.turn = true;
+Dice.prototype.hold = function() {
+  this.turn = false;
 }
+
 // function gameScore() {
 //   this.playerOne 
 // }
