@@ -19,9 +19,9 @@ Dice.prototype.diceCount = function() {
   console.log(myRoll);
   if (myRoll === 1) {
     this.scoreCount = 0;
+    this.rolls = [];
     this.p1Turn = !this.p1Turn;
     this.p2Turn = !this.p2Turn;
-    alert('turn over');
   } else if (myRoll !== 1) {
     this.scoreCount += myRoll;
     this.rolls.push(myRoll);
@@ -39,9 +39,19 @@ Dice.prototype.winCondition = function () {
 }
 
 Dice.prototype.hold = function() {
-  this.turn = false;
-  let roundScore = this.scoreCount;
-  return roundScore;
+  console.log(this.scoreCount);
+  console.log(typeof this.scoreCount);
+  if (this.p1Turn === true) {
+     this.p1Total += this.scoreCount;
+  } else {  
+    this.p2Total += this.scoreCount;
+  }
+  console.log(this.p1Total);
+  console.log(this.p2Total);
+  this.p1Turn = !this.p1Turn;
+  this.p2Turn = !this.p2Turn;
+  this.rolls = [];
+  this.scoreCount = 0;
 }
 
 function Game() {
