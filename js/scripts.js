@@ -18,6 +18,7 @@ Dice.prototype.diceRoll = function() {
 Dice.prototype.diceCount = function() {
   let myRoll = this.diceRoll();
   console.log(myRoll);
+  updateImage(myRoll);
   if (myRoll === 1) {
     this.scoreCount = 0;
     this.rolls = [];
@@ -38,12 +39,16 @@ Dice.prototype.diceCount = function() {
 }
 
 Dice.prototype.winCondition = function () {
-  if (this.p1Total + this.scoreCount >= 15) {
+  if (this.p1Total + this.scoreCount >= 50) {
     this.p1Total += this.scoreCount;
     console.log("Player 1 Wins!");
-  } else if (this.p2Total + this.scoreCount >= 15) {
+    $("#outcome").text("Player One Wins!");
+    $(".container").hide();
+  } else if (this.p2Total + this.scoreCount >= 50) {
     this.p2Total += this.scoreCount;
     console.log("Player 2 Wins!");
+    $("#outcome").text("Player Two Wins!");
+    $(".container").hide();
   } else {
     console.log("Keep playing!");
   }
@@ -70,59 +75,81 @@ $(document).ready(function() {
   let newDice = new Dice();
   //$("#start").click(function() {
  //})
- if (newDice.p1Turn === true) {
-  $("#roll").click(function() {
-    newDice.diceCount();
-    newDice.winCondition();
-    console.log(newDice);
-    $("#player1Score").html(newDice.p1Total);
-    $("#turnRolls").html(newDice.rolls);
-    $("#player2Score").html(newDice.p2Total);
-    if (newDice.p1Turn !== true) {
-      $("#playerOne").hide();
-      $("#playerTwo").show();
-    }
-  })
-
-  $("#hold").click(function() {
-    newDice.hold();
-    console.log(newDice);
-    $("#player1Score").html(newDice.p1Total);
-    $("#player2Score").html(newDice.p2Total);
-    if (newDice.p1Turn !== true) {
-      $("#playerOne").hide();
-      $("#playerTwo").show();
-    }
-  })
-} else {
-  // $("#playerOne").hide();
-  console.log ("Hi There!");
-  }
-})
-
-  $("#roll2").click(function() {
-    if (this.p2Turn === true) {
+  // if (newDice.p1Turn === true) {
+    $("#roll").click(function() {
       newDice.diceCount();
-      newDice.winCondition();
+      //newDice.winCondition();
       console.log(newDice);
       $("#player1Score").html(newDice.p1Total);
-      $("#turnRolls").html(newDice.rolls);
-      $("#player2Score").html(newDice.p2Total);
-    } else {
-      $("#roll").attr("disabled", true);
-    }
-  })
+      $("#turnRolls").html(newDice.rolls + ", ");
+      //$("#player2Score").html(newDice.p2Total);
+      if (newDice.p1Turn !== true) {
+        $("#playerOne").hide();
+        $("#playerTwo").show();
+      }
+    })
 
-  $("#hold2").click(function() {
-      if (this.p2Turn === true) {
+    $("#hold").click(function() {
       newDice.hold();
       console.log(newDice);
       $("#player1Score").html(newDice.p1Total);
       $("#player2Score").html(newDice.p2Total);
-    } else {
-      $("#hold").attr("disabled", true);
-    }
+      if (newDice.p1Turn !== true) {
+        $("#playerOne").hide();
+        $("#playerTwo").show();
+      }
+    })
+  // } else {
+    $("#roll2").click(function() {
+      newDice.diceCount();
+      // updateImage(newDice.myRoll());
+      //newDice.winCondition();
+      console.log(newDice);
+      //$("#player1Score").html(newDice.p1Total);
+      $("#turnRolls").html(newDice.rolls + ", ");
+      $("#player2Score").html(newDice.p2Total);
+      if (newDice.p2Turn !== true) {
+        $("#playerOne").show();
+        $("#playerTwo").hide();
+      }
+    })
+
+    $("#hold2").click(function() {
+      newDice.hold();
+      console.log(newDice);
+      //$("#player1Score").html(newDice.p1Total);
+      $("#player2Score").html(newDice.p2Total);
+      if (newDice.p2Turn !== true) {
+        $("#playerOne").show();
+        $("#playerTwo").hide();
+      }
+    })
   })
 
+  function updateImage(myRoll){
+    $(".showDice").hide();
+    switch (myRoll) {
+      case (1):
+        $("#one").show();
+        break;
+      case (2):
+        $("#two").show();
+        break;
+      case (3):
+        $("#three").show();
+        break;
+      case (4):
+        $("#four").show();
+        break;
+      case (5):
+        $("#five").show();
+        break;
+      case (6):
+        $("#six").show();
+        break;  
+      default:
+      console.warn("You Mother Never Loved You!");
+    }
+  } 
 // $("#roll").attr("disabled", true);  
 // $("#hold").attr("disabled", true);

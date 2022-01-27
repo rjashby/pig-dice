@@ -11,7 +11,7 @@
 </head>
 <body>
   <h1>Let's Play a Game of Pig Dice</h1>
-  <div id="container">
+  <div class="container">
     <div class="row">
       <div class="col">
           <div class ="card">
@@ -29,20 +29,48 @@
         </div>
       </div>
     </div>
-    <div id="playerOne">
-      <h3>Player One Turn!</h3>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto quis incidunt, dicta a eligendi corrupti iure cupiditate ab voluptatibus fuga pariatur distinctio, vero dignissimos recusandae nemo omnis quos, ducimus hic.</p>
-      <button class="btn btn-light" id="roll">Roll</button> 
-      <button class="btn btn-light" id="hold">Hold</button>
+    <div class="row">
+      <div class="col">
+          <div class ="card">
+            <div id="playerOne">
+              <h3>Player One Turn!</h3>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto quis incidunt, dicta a eligendi corrupti iure cupiditate ab voluptatibus fuga pariatur distinctio, vero dignissimos recusandae nemo omnis quos, ducimus hic.</p>
+              <button class="btn btn-light" id="roll">Roll</button> 
+              <button class="btn btn-light" id="hold">Hold</button>
+            </div>  
+          </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <p>Hey there</p>
+          <div class="showDice">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Alea_1.png" alt="Dice Roll of 1" id="one">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Alea_2.png" alt="Dice Roll of 2" id="two">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Alea_3.png" alt="Dice Roll of 3" id="three">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Alea_4.png" alt="Dice Roll of 4" id="four">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Alea_5.png" alt="Dice Roll of 5" id="five">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Alea_6.png" alt="Dice Roll of 6" id="six"> 
+          </div>  
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div id="playerTwo">
+            <h3>Player Two Turn!</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, suscipit possimus ab hic adipisci excepturi, iste obcaecati distinctio fugiat quae dignissimos accusamus incidunt ipsum dolorum reiciendis, tempore odit. Tempore, deleniti.</p>
+            <button class="btn btn-dark" id="roll2">Roll</button> 
+            <button class="btn btn-dark" id="hold2">Hold</button>
+          </div>  
+        </div>
+      </div>
     </div>
-    <div id="playerTwo">
-      <h3>Player Two Turn!</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis, suscipit possimus ab hic adipisci excepturi, iste obcaecati distinctio fugiat quae dignissimos accusamus incidunt ipsum dolorum reiciendis, tempore odit. Tempore, deleniti.</p>
-      <button class="btn btn-dark" id="roll2">Roll</button> 
-      <button class="btn btn-dark" id="hold2">Hold</button>
+    
+    
+  </div>
+  <div class="resetGame">
+    <div class="card">
+      <p id="outcome"></p>
     </div>
-    <div class="">
-      <button class="btn btn-info" id="start">Start Game</button> 
-    </div>
+    <button class="btn btn-danger" id="reset" onClick="window.location.reload()";>Reset Game</button> 
   </div>
 </body>
