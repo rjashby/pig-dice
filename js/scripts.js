@@ -1,3 +1,5 @@
+// BUSINESS LOGIC
+
 function Dice() {
   this.scoreCount = 0;
   this.rolls = [];
@@ -59,3 +61,20 @@ Dice.prototype.hold = function() {
   this.rolls = [];
   this.scoreCount = 0;
 }
+
+// UI LOGIC
+
+
+$(document).ready(function() {
+  $("#roll").click(function() {
+    let newDice = new Dice();
+    newDice.diceCount();
+    newDice.winCondition();
+    console.log(newDice);
+  })
+
+  $("#hold").click(function() {
+    newDice.hold();
+    console.log(newDice);
+  })
+})
