@@ -9,7 +9,6 @@ function Dice() {
   this.p2Total = 0;
 }
 
-let newDice = new Dice
 
 Dice.prototype.diceRoll = function() {
   let diceRoll =  Math.floor(Math.random() * 6 ) + 1;
@@ -62,19 +61,68 @@ Dice.prototype.hold = function() {
   this.scoreCount = 0;
 }
 
+// function startGame() {
+//   let newDice = new Dice();
+// }
 // UI LOGIC
 
-
 $(document).ready(function() {
+  let newDice = new Dice();
+  //$("#start").click(function() {
+ //})
+ if (newDice.p1Turn === true) {
   $("#roll").click(function() {
-    let newDice = new Dice();
     newDice.diceCount();
     newDice.winCondition();
     console.log(newDice);
+    $("#player1Score").html(newDice.p1Total);
+    $("#turnRolls").html(newDice.rolls);
+    $("#player2Score").html(newDice.p2Total);
+    if (newDice.p1Turn !== true) {
+      $("#playerOne").hide();
+      $("#playerTwo").show();
+    }
   })
 
   $("#hold").click(function() {
     newDice.hold();
     console.log(newDice);
+    $("#player1Score").html(newDice.p1Total);
+    $("#player2Score").html(newDice.p2Total);
+    if (newDice.p1Turn !== true) {
+      $("#playerOne").hide();
+      $("#playerTwo").show();
+    }
   })
+} else {
+  // $("#playerOne").hide();
+  console.log ("Hi There!");
+  }
 })
+
+  $("#roll2").click(function() {
+    if (this.p2Turn === true) {
+      newDice.diceCount();
+      newDice.winCondition();
+      console.log(newDice);
+      $("#player1Score").html(newDice.p1Total);
+      $("#turnRolls").html(newDice.rolls);
+      $("#player2Score").html(newDice.p2Total);
+    } else {
+      $("#roll").attr("disabled", true);
+    }
+  })
+
+  $("#hold2").click(function() {
+      if (this.p2Turn === true) {
+      newDice.hold();
+      console.log(newDice);
+      $("#player1Score").html(newDice.p1Total);
+      $("#player2Score").html(newDice.p2Total);
+    } else {
+      $("#hold").attr("disabled", true);
+    }
+  })
+
+// $("#roll").attr("disabled", true);  
+// $("#hold").attr("disabled", true);
