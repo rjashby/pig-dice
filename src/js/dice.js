@@ -36,19 +36,19 @@ export default class Dice {
   }
 
   winCondition = function () {
-    // if (this.p1Total + this.scoreCount >= 100) {
-    //   this.p1Total += this.scoreCount;
-    //   console.log("Player 1 Wins!");
-    //   // $("#outcome").text("Player One Wins!");
-    //   // $(".container").hide();
-    // } else if (this.p2Total + this.scoreCount >= 100) {
-    //   this.p2Total += this.scoreCount;
-    //   console.log("Player 2 Wins!");
-    //   // $("#outcome").text("Player Two Wins!");
-    //   // $(".container").hide();
-    // } else {
-    //   console.log("Keep playing!");
-    // }
+    if (this.p1Total + this.scoreCount >= 100) {
+      this.p1Total += this.scoreCount;
+      console.log("Player 1 Wins!");
+      // $("#outcome").text("Player One Wins!");
+      // $(".container").hide();
+    } else if (this.p2Total + this.scoreCount >= 100) {
+      this.p2Total += this.scoreCount;
+      console.log("Player 2 Wins!");
+      // $("#outcome").text("Player Two Wins!");
+      // $(".container").hide();
+    } else {
+      console.log("Keep playing!");
+    }
   }
 
   hold = function() {
