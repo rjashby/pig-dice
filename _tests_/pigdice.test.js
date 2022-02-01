@@ -52,6 +52,4 @@ describe("Dice", () => {
     expect(myDice.p1Turn ).toEqual(false)
     expect(myDice.p2Turn ).toEqual(true)
     });
-
-
 })

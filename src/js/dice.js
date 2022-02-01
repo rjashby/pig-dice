@@ -2,8 +2,8 @@ export default class Dice {
   constructor(scoreCount, rolls, p1Turn, p2Turn, p1Total, p2Total, diceRoll) {
   this.scoreCount = scoreCount;
   this.rolls = rolls;
-  this.p1Turn = true;
-  this.p2Turn = false;
+  this.p1Turn = p1Turn;
+  this.p2Turn = p2Turn;
   this.p1Total = p1Total;
   this.p2Total = p2Total;
   this.diceRoll = diceRoll;
