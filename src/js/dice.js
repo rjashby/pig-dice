@@ -18,8 +18,8 @@ export default class Dice {
     // console.log(myRoll);
     // updateImage(myRoll);
     if (this.diceRoll === 1) { 
-      // this.scoreCount = 0;
-      // this.rolls = [];
+      this.scoreCount = 0;
+      this.rolls = [];
       this.p1Turn = !this.p1Turn;
       this.p2Turn = !this.p2Turn;
     // } else if (myRoll !== 1) {
