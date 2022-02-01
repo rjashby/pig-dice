@@ -1,7 +1,7 @@
 export default class Dice {
   constructor(scoreCount, rolls, p1Turn, p2Turn, p1Total, p2Total, diceRoll) {
-  this.scoreCount = 0;
-  this.rolls = [];
+  this.scoreCount = scoreCount;
+  this.rolls = rolls;
   this.p1Turn = true;
   this.p2Turn = false;
   this.p1Total = 0;
@@ -18,8 +18,8 @@ export default class Dice {
     // console.log(myRoll);
     // updateImage(myRoll);
     if (this.diceRoll === 1) { 
-      this.scoreCount = 0;
-      this.rolls = [];
+      // this.scoreCount = 0;
+      // this.rolls = [];
       this.p1Turn = !this.p1Turn;
       this.p2Turn = !this.p2Turn;
     // } else if (myRoll !== 1) {

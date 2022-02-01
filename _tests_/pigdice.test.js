@@ -22,4 +22,11 @@ describe("Dice", () => {
     expect(myDice.p1Turn).toEqual(false);
     expect(myDice.p2Turn).toEqual(true);
   });
+  
+  test("Should change the boolean value on a player's turn if a 1 is rolled, false to true, and vice versa", () => {
+    let myDice = new Dice (3, [1,2,3,4], true, false, 0, 0 , 1);
+    myDice.diceCount();
+    expect(myDice.scoreCount).toEqual(0);
+    expect(myDice.rolls).toEqual([]);
+  });
 });
