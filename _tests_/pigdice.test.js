@@ -13,7 +13,13 @@ describe("Dice", () => {
 
   test('Should roll a number lesser than or equal to six',() => {
     let myDiceRoll = new Dice (0, [], true, false, 0, 0);
-    expect( myDiceRoll.diceRoll()).toBeLessThanOrEqual(6);
+    expect(myDiceRoll.diceRollFunction()).toBeLessThanOrEqual(6);
+  });
 
+  test("Should change the boolean value on a player's turn if a 1 is rolled, false to true, and vice versa", () => {
+    let myDice = new Dice (0, [], true, false, 0, 0 , 1);
+    myDice.diceCount();
+    expect(myDice.p1Turn).toEqual(false);
+    expect(myDice.p2Turn).toEqual(true);
   });
 });

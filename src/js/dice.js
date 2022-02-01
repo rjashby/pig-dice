@@ -1,38 +1,38 @@
 export default class Dice {
-  constructor(scoreCount, rolls, p1Turn, p2Turn, p1Total, p2Total) {
+  constructor(scoreCount, rolls, p1Turn, p2Turn, p1Total, p2Total, diceRoll) {
   this.scoreCount = 0;
   this.rolls = [];
   this.p1Turn = true;
   this.p2Turn = false;
   this.p1Total = 0;
   this.p2Total = 0;
-}
+  this.diceRoll = diceRoll;
+  }
 
-  diceRoll = function() {
-    let diceRoll =  Math.floor(Math.random() * 6 ) + 1;
-    return diceRoll;
+  diceRollFunction = function() {
+    this.diceRoll = Math.floor(Math.random() * 6 ) + 1;
+    return this.diceRoll;
   }
 
   diceCount = function() {
-    let myRoll = this.diceRoll();
-    console.log(myRoll);
+    // console.log(myRoll);
     // updateImage(myRoll);
-    if (myRoll === 1) {
+    if (this.diceRoll === 1) { 
       this.scoreCount = 0;
       this.rolls = [];
       this.p1Turn = !this.p1Turn;
       this.p2Turn = !this.p2Turn;
-    } else if (myRoll !== 1) {
-      if (this.p1Turn === true) {
-        this.scoreCount += myRoll;
-        this.rolls.push(myRoll);
-      } else {
-        this.scoreCount += myRoll;
-        this.rolls.push(myRoll);
-      }
-    console.log(this);
-    console.log(this.scoreCount);
-    this.winCondition();
+    // } else if (myRoll !== 1) {
+    //   if (this.p1Turn === true) {
+    //     this.scoreCount += myRoll;
+    //     this.rolls.push(myRoll);
+    //   } else {
+    //     this.scoreCount += myRoll;
+    //     this.rolls.push(myRoll);
+    //   }
+    // console.log(this);
+    // console.log(this.scoreCount);
+    // this.winCondition();
     }
   }
 
