@@ -9,14 +9,14 @@ export default class Dice {
 }
 
   diceRoll = function() {
-    let rollOfDice =  Math.floor(Math.random() * 6 ) + 1;
-    return rollOfDice;
+    let diceRoll =  Math.floor(Math.random() * 6 ) + 1;
+    return diceRoll;
   }
 
   diceCount = function() {
     let myRoll = this.diceRoll();
     console.log(myRoll);
-    updateImage(myRoll);
+    // updateImage(myRoll);
     if (myRoll === 1) {
       this.scoreCount = 0;
       this.rolls = [];
