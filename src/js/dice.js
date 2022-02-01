@@ -15,14 +15,13 @@ export default class Dice {
   }
 
   diceCount = function() {
-    // console.log(myRoll);
-    // updateImage(myRoll);
-    // if (this.diceRoll === 1) { 
-    //   this.scoreCount = 0;
-    //   this.rolls = [];
-    //   this.p1Turn = !this.p1Turn;
-    //   this.p2Turn = !this.p2Turn;
-    if (this.diceRoll !== 1) {
+    console.log(this.diceRoll);
+    if (this.diceRoll === 1) { 
+      this.scoreCount = 0;
+      this.rolls = [];
+      this.p1Turn = !this.p1Turn;
+      this.p2Turn = !this.p2Turn;
+    } else if (this.diceRoll !== 1) {
       if (this.p1Turn === true) {
         this.scoreCount += this.diceRoll;
         this.rolls.push(this.diceRoll);
@@ -30,9 +29,9 @@ export default class Dice {
         this.scoreCount += this.diceRoll;
         this.rolls.push(this.diceRoll);
       }
-    // console.log(this);
-    // console.log(this.scoreCount);
-    // this.winCondition();
+      console.log(this);
+      console.log(this.scoreCount);
+      this.winCondition();
     }
   }
 
@@ -64,3 +63,4 @@ export default class Dice {
     this.scoreCount = 0;
   }
 }
+
