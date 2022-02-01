@@ -37,5 +37,9 @@ describe("Dice", () => {
     expect(myDice.rolls).toEqual([3]);
   });
   
-  
-});
+  test("Should declare a winner once a score of 100 is reached", () => {
+  let myDice = new Dice (0, [], true, false, 97, 0 , 4);
+  myDice.diceCount();
+  expect(myDice.p1Total).toEqual(101);
+  });
+})
