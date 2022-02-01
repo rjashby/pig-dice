@@ -17,19 +17,19 @@ export default class Dice {
   diceCount = function() {
     // console.log(myRoll);
     // updateImage(myRoll);
-    if (this.diceRoll === 1) { 
-      this.scoreCount = 0;
-      this.rolls = [];
-      this.p1Turn = !this.p1Turn;
-      this.p2Turn = !this.p2Turn;
-    // } else if (myRoll !== 1) {
-    //   if (this.p1Turn === true) {
-    //     this.scoreCount += myRoll;
-    //     this.rolls.push(myRoll);
-    //   } else {
-    //     this.scoreCount += myRoll;
-    //     this.rolls.push(myRoll);
-    //   }
+    // if (this.diceRoll === 1) { 
+    //   this.scoreCount = 0;
+    //   this.rolls = [];
+    //   this.p1Turn = !this.p1Turn;
+    //   this.p2Turn = !this.p2Turn;
+    if (this.diceRoll !== 1) {
+      if (this.p1Turn === true) {
+        // this.scoreCount += this.diceRoll;
+        // this.rolls.push(this.diceRoll);
+      } else {
+        this.scoreCount += this.diceRoll;
+        this.rolls.push(this.diceRoll);
+      }
     // console.log(this);
     // console.log(this.scoreCount);
     // this.winCondition();

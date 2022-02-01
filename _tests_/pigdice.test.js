@@ -23,10 +23,18 @@ describe("Dice", () => {
     expect(myDice.p2Turn).toEqual(true);
   });
   
-  test("Should change the boolean value on a player's turn if a 1 is rolled, false to true, and vice versa", () => {
+  test("Should set scoreCount to 0 and rolls to empty array", () => {
     let myDice = new Dice (3, [1,2,3,4], true, false, 0, 0 , 1);
     myDice.diceCount();
     expect(myDice.scoreCount).toEqual(0);
     expect(myDice.rolls).toEqual([]);
   });
+
+  test("Should set scoreCount to dice roll and rolls array must be increments with dice roll", () => {
+    let myDice = new Dice (0, [], true, false, 0, 0 , 3);
+    myDice.diceCount();
+    expect(myDice.scoreCount).toEqual(3);
+    expect(myDice.rolls).toEqual([3]);
+  });
+  
 });
