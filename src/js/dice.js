@@ -24,8 +24,8 @@ export default class Dice {
     //   this.p2Turn = !this.p2Turn;
     if (this.diceRoll !== 1) {
       if (this.p1Turn === true) {
-        // this.scoreCount += this.diceRoll;
-        // this.rolls.push(this.diceRoll);
+        this.scoreCount += this.diceRoll;
+        this.rolls.push(this.diceRoll);
       } else {
         this.scoreCount += this.diceRoll;
         this.rolls.push(this.diceRoll);
