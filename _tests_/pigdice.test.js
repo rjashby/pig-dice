@@ -42,4 +42,16 @@ describe("Dice", () => {
   myDice.diceCount();
   expect(myDice.p1Total).toEqual(101);
   });
+
+  test("Should set scoreCount as playerscore ,rolls as empty array,scoreCount as 0 ", () => {
+    let myDice = new Dice (10, [5], true, false, 10, 0 , 5);
+    myDice.hold();
+    expect(myDice.p1Total).toEqual(20);
+    expect(myDice.rolls).toEqual([]);
+    expect(myDice.scoreCount).toEqual(0);
+    expect(myDice.p1Turn ).toEqual(false)
+    expect(myDice.p2Turn ).toEqual(true)
+    });
+
+
 })

@@ -5,7 +5,7 @@ export default class Dice {
   this.p1Turn = true;
   this.p2Turn = false;
   this.p1Total = p1Total;
-  this.p2Total = 0;
+  this.p2Total = p2Total;
   this.diceRoll = diceRoll;
   }
 
@@ -52,15 +52,15 @@ export default class Dice {
   }
 
   hold = function() {
-    if (this.p1Turn === true) {
-      this.p1Total += this.scoreCount;
-    } else {  
-      this.p2Total += this.scoreCount;
-    }
-    this.p1Turn = !this.p1Turn;
-    this.p2Turn = !this.p2Turn;
-    this.rolls = [];
-    this.scoreCount = 0;
+    // if (this.p1Turn === true) {
+    //   this.p1Total += this.scoreCount;
+    // } else {  
+    //   this.p2Total += this.scoreCount;
+    // }
+    // this.p1Turn = !this.p1Turn;
+    // this.p2Turn = !this.p2Turn;
+    // this.rolls = [];
+    // this.scoreCount = 0;
   }
 }
 
