@@ -7,7 +7,7 @@ export default class Dice {
   this.p1Total = p1Total;
   this.p2Total = p2Total;
   this.diceRoll = diceRoll;
-  }
+}
 
   diceRollFunction = function() {
     this.diceRoll = Math.floor(Math.random() * 6 ) + 1;
